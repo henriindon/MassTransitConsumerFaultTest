@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "logging": {
+    "logLevel": {
+      "MassTransit": "Trace"
+    }
+  },
+  "extensions": {
+    "serviceBus": {
+      "messageHandlerOptions": {
+        // "The functions host.json file needs to have messageHandlerOptions > autoComplete set to true. If this isn't set to true, MassTransit will try to set it to true for you. This is so that the message is acknowledged by the Azure Functions runtime, which removes it from the queue once processing has completed successfully."
+        // (https://masstransit-project.com/usage/transports/azure-sb.html)
+        "autoComplete": true
+      }
+    }
+  }
+}
